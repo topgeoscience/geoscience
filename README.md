@@ -1,7 +1,7 @@
 # geoscience
 geoscience.top 
 
-![logo](http://geoscience.top/img/logo.png)
+![logo](img/logo.png)
 
 ---
 
