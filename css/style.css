@@ -17,6 +17,7 @@ a:hover {color:#f65;-webkit-transition: all 0.3s ease;transition: all 0.3s ease;
 
 .home-page {width:100%;height:auto;margin-top:80px;}
 .home-page .title {background-color:rgba(0,0,0,0.5);width:100%;right:0 !important;left:0 !important;padding:35px 0;font-size:1.2em}
+.home-page .carousel img{width:auto;height:400px;}
 .main-page-home {position:relative;background-color:rgba(255,255,255,0.8);z-index:0;height:auto;width:70%;margin-left:15%;}
 .home-page .breadcrumb {height:36px;line-height:36px;background-color: #eee;padding:2px;margin-bottom:10px;}
 .home-page .news-right {width:100%;height:400px;box-shadow: 1px 3px 5px rgba(195,195,195,0.5)}
