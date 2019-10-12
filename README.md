@@ -1,4 +1,4 @@
-# geoscience
+﻿# geoscience
 geoscience.top 
 
 ![logo](img/logo.png)
@@ -12,3 +12,4 @@ geoscience.top
 ---
 
 Fighting GISer！
+2019.10.12
