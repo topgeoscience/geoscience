@@ -34,6 +34,8 @@ a:hover {color:#f65;-webkit-transition: all 0.3s ease;transition: all 0.3s ease;
 .portlet-0 .portlet-title {border-bottom:3px solid #fa9;}
 .portlet-0 .portlet-title span {font-size:1.2em;}
 .portlet-0 .portlet-title ion-icon {font-size:1.5em;color:#f65;}
+.portlet-0 .portlet-title a {color:#f65;float:right;margin-right:10px;}
+.portlet-0 .portlet-title a:hover {color:#08e}
 .portlet {width:100%;color:#333;border-left:1px solid #6cf;padding:2px;}
 .portlet .portlet-title {border-bottom:3px solid #6cf;}
 .portlet .portlet-title span {font-size:1.2em;}
@@ -146,27 +148,26 @@ body footer .footer-copy .copyright{text-align:center;color:#aaa !important;back
 .numbers {font-family: "Montserrat", sans-serif;color: #183059;font-size: 1.2em;font-weight:bold;}
 
 /* search */
-.g-search {position: fixed;top:14px;left:64%;text-align:center;z-index:99999}
-.g-search input {background:rgba(255,255,255,0.2);border:0;border-right:1px solid #fff;border-radius:20px 0 0 20px;color:#fff;display:block;float:left;font-size:12px;height:32px;margin:0;padding:0 10px;width:120px;}
-.g-search input::-webkit-input-placeholder {color: #fff;}
-.g-search input:-moz-placeholder {color: #fff;}
+.g-search {position: relative;float:right;text-align:center;z-index:99999}
+.g-search input {background:rgba(255,255,255,1);border:1px solid #999;border-radius:20px 0 0 20px;color:#fff;display:block;float:left;font-size:12px;height:32px;margin:0;padding:0 10px;width:120px;}
+.g-search input::-webkit-input-placeholder {color: #555;}
+.g-search input:-moz-placeholder {color: #555;}
 .g-search input:focus {-webkit-animation: glow 800ms ease-out infinite alternate;-moz-animation: glow 800ms ease-out infinite alternate;animation: glow 800ms ease-out infinite alternate;background: rgba(255,255,255,0.9);color: #555;outline: none;}
 .g-search input:focus::-webkit-input-placeholder { color: #555;}
 .g-search input:focus:-moz-placeholder {color: #555;}
-.g-search a {background: rgba(255,255,255,0.2);border-left:0;border-radius:0 20px 20px 0;color: #fff;display: block;float: left;font-size: 12px;height: 32px;line-height: 32px;margin: 0;padding: 0;position: relative;width: 42px;text-decoration: none;transition: all 0.3s ease;}
-.g-search a:hover, .g-search a:focus {background: rgba(255,255,255,0.5);color: #5f5;transition: all 0.3s ease;}
-.g-search a:active {background: rgba(255,255,255,0.2)}
+.g-search a {background:rgba(255,255,255,0.5);border:1px solid #999;border-radius:0 20px 20px 0;color:#555;display:block;float:left;font-size:18px;height:32px;line-height:32px;margin:0;padding:0;position:relative;width:42px;text-decoration:none;transition:all 0.2s ease;}
+.g-search a:hover, .g-search a:focus {background:rgba(255,255,255,1);color:#08e;transition:all 0.2s ease;}
+.g-search a:active {background: rgba(255,255,255,0.5)}
 .g-search .warning {display:none;width:100%;background:#f2eeee;color:#b94a48;margin-top:32px;border-color:#eed3d7;}
 @-webkit-keyframes glow {
-    0% {box-shadow: 0 0 5px rgba(0,255,0,0.1);border:1px solid #fff}
-    100% {box-shadow: 0 0 20px rgba(0,255,0,1);border:1px solid #6f6}
+    0% {box-shadow: 0 0 5px rgba(0,105,255,0.1);border:1px solid #fff}
+    100% {box-shadow: 0 0 20px rgba(0,105,255,1);border:1px solid #09f}
 }
 @-moz-keyframes glow {
-    0% {box-shadow: 0 0 5px rgba(0,255,0,0.1);border:1px solid #fff}
-    100% {box-shadow: 0 0 20px rgba(0,255,0,1);border:1px solid #6f6}
+    0% {box-shadow: 0 0 5px rgba(0,105,255,0.1);border:1px solid #fff}
+    100% {box-shadow: 0 0 20px rgba(0,105,255,1);border:1px solid #09f}
 }
-
-.popup-search {display:none;position:absolute;z-index:9999;width:50%;margin-left:25%;height:60%;background:#fff;box-shadow:0 10px 50px rgba(0,0,0,0.5)}
+.popup-search {display:none;position:absolute;z-index:9999;width:50%;margin-left:25%;height:60%;background:#fff;}
 .popup-search .title {position:relative;width:100%;height:55px;background:rgba(0,0,0,0.75);cursor:move;}
 .popup-search .title p {padding-left: 14px;line-height: 55px;color: #fff;}
 .popup-search .title span {position:absolute;top:12px;right:20px;width:30px;height:30px;color:#fff;opacity:0.7;font-size:16px;cursor:pointer;text-align:center;}
