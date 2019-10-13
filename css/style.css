@@ -24,7 +24,7 @@ a:hover {color:#f65;-webkit-transition: all 0.3s ease;transition: all 0.3s ease;
 
 .main-page .item-block {width:100%;height:320px;color:#333;background:rgba(205,235,255,0.05);margin-top:20px}
 .main-page .item-block img {width:80%}
-.main-page .item-spectial {width:100%;min-height:160px;color:#333;background:rgba(205,255,205,0.05);margin-top:20px}
+.main-page .item-spectial {width:100%;min-height:320px;color:#333;background:rgba(205,255,205,0.05);margin-top:20px}
 .main-page .item-spectial .links-a img {width:22%;margin-left:3%;margin-top:10px;opacity:1}
 .main-page .item-spectial .links-a img:hover {opacity:0.85}
 .main-page .links-icon img {width:50px;margin-left:10px;opacity:0.5}
@@ -42,9 +42,6 @@ a:hover {color:#f65;-webkit-transition: all 0.3s ease;transition: all 0.3s ease;
 .portlet .portlet-title ion-icon {font-size:1.5em;color:#08e;}
 .portlet .portlet-title a {color:#08e;float:right;margin-right:10px;}
 .portlet .portlet-title a:hover {color:#f65}
-
-
-
 
 
 

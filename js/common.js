@@ -8,6 +8,10 @@
 $(document).ready(function($) {
 	/*百度自动推送*/
 	$("body").append("<script>(function(){var bp = document.createElement('script');var curProtocol = window.location.protocol.split(':')[0];if (curProtocol === 'https') {bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';}else {bp.src = 'http://push.zhanzhang.baidu.com/push.js';}var s = document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(bp, s);})();</script>");
+	// Share
+	if($("#shareit").length > 0) {
+		$("body").append("<script>window._bd_share_config={'common':{'bdSnsKey':{},'bdText':'','bdMini':'2','bdMiniList':false,'bdPic':'','bdStyle':'0','bdSize':'16'},'slide':{'type':'slide','bdImg':'4','bdPos':'right','bdTop':'100'}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>");
+	}
 
 });
 	
@@ -24,16 +28,6 @@ if($("#comments")) {
 	$("#comments").append(Comments());
 }
 	
-// Share
-if($("#shareit")) {
-	$("#shareit").append(Share());
-}
-	
-// Dashang
-if(document.getElementById("dashang")) {
-	Dashang();
-}
-	
 // Warning
 if($("#warning")) {
 	$("#warning").html(Warning());
@@ -41,9 +35,6 @@ if($("#warning")) {
 	
 // Search
 Search();
-	
-// Declare
-Declare();
 	
 // Visitors statistic
 PageViews();
@@ -55,9 +46,7 @@ gotoTop(600);
 //GreatChina();
 China70();
 	
-// Hot topics
-HotTopic();
-	
+followUs();
 	
 // Functions ****************************** Functions
 
@@ -66,9 +55,7 @@ function ClustrMaps() {
 }
 
 function Copyright() {
-	if($("#copyright")) {
-		$("#copyright").html("Copyright © <a href='http://geoscience.top/' target='_blank'>GeoScience <img src='http://geoscience.top/img/logo.png' width='16'></a> 2019-2020, All Rights Reserved, 京ICP备xxx号  <br>Powered by <a href='https://github.com/' target='_blank'>GitHub <ion-icon name='logo-github'></ion-icon></a>");
-	}
+	$("footer").html("<img class='footer-logo' src='http://geoscience.top/img/logo.png' width='50'><a href='###'> 联系我们 </a><span>|</span><a href='###'> 技术援助 </a><span>|</span><a href='###'> 合作交流 </a><span>|</span><a href='###'> 公告专区 </a><div class='footer-text'><span> 服务时间 09:00-15:00) </span><span> 服务电话电话:+86 1xxxxxxxxxx </span><span> 地址:北京市海淀区邓庄南路9号 中国科学院遥感与数字地球研究所 </span></div><div class='footer-copy' id='copyright'>Copyright © <a href='http://geoscience.top/' target='_blank'>GeoScience <img src='http://geoscience.top/img/logo.png' width='16'></a> 2019-2020, All Rights Reserved, 京ICP备xxx号  <br>Powered by <a href='https://github.com/' target='_blank'>GitHub <ion-icon name='logo-github'></ion-icon></a></div>");
 }
 
 function Comments() {
@@ -80,38 +67,7 @@ function Comments() {
 			"<script type=\"text/javascript\">(function(d, s) {var j, e = d.getElementsByTagName(s)[0];if (typeof LivereTower === 'function') { return; }j = d.createElement(s);j.src = 'https://cdn-city.livere.com/js/embed.dist.js';j.async = true;e.parentNode.insertBefore(j, e);})(document, 'script');</script>" +
 			"</div><!-- City版安装代码已完成 --></div>";
 }
-
-function Share() {
-	return "<script>window._bd_share_config={\"common\":{\"bdSnsKey\":{},\"bdText\":\"\",\"bdMini\":\"2\",\"bdMiniList\":false,\"bdPic\":\"\",\"bdStyle\":\"0\",\"bdSize\":\"16\"},\"slide\":{\"type\":\"slide\",\"bdImg\":\"4\",\"bdPos\":\"right\",\"bdTop\":\"100\"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>";
-}
-
-function Dashang() {
-	$("#dashang").html("<br><hr><div class=\"shang_img\"></div>" +
-						"<span class=\"tdcode\">" +
-						"<p style='color:#fff'>非常感谢您的支持！</p>" +
-						"<img src=\"http://gaohr.win/img/pay/alipay.png\">" +
-						"<img src=\"http://gaohr.win/img/pay/wechat.png\">" +
-						"<p style='color:#fff'>扫码打赏，建议金额：1-10元</p>" +
-						"</span><br>" + 
-						"<div class=\"row-fluid\"><div class=\"span8\"><div class=\"dshstatis\" id=\"dshstatis\"></div></div><div class=\"span4\"><div class=\"dshlist\"><p class=\"dshtext\"></p><hr><div class=\"dshcontent\"></div></div></div></div><hr>");
 	
-	$(".shang_img").hover(
-		function(){$(".shang_img").css("background-image","url(http://gaohr.win/img/pay/shang_hover.png)");}, 
-		function(){$(".shang_img").css("background-image","url(http://gaohr.win/img/pay/shang.png)");});
-	$(".shang_img").click(function() {$(".tdcode").toggle(300);});
-	var dsh_num = paylist.length;
-	$(".dshtext").append("共 <span><i>" + dsh_num + "</i></span> 人次打赏");
-	for(i = 0; i < dsh_num; i++) {$(".dshcontent").append("<p><i class='icon-heart'></i><span class='name'>" + paylist[i].name + "</span>打赏了<span class='money'><b>" + paylist[i].amount + "</b>元</span><i class='date'>" + paylist[i].date + "</i></p>");}
-	$(".dshlist").append("<hr><p class=\"dshbottom\">非常感谢您的支持！<i class=\"emo emo-02-16\" style=\"margin-top:-10px\"></i></p>");
-	var a1 = 0,a2 = 0, a3 = 0, a4 = 0, a5 = 0;
-	for(i = 0; i < dsh_num; i++) {if(paylist[i].amount < 1) {a1 += 1;} else if(paylist[i].amount >= 1 && paylist[i].amount < 2) {a2 += 1;} else if(paylist[i].amount >= 2 && paylist[i].amount < 5) {a3 += 1;} else if(paylist[i].amount >= 5 && paylist[i].amount < 10) {a4 += 1;} else {a5 += 1;}};
-	var chart = echarts.init(document.getElementById('dshstatis'));
-	var colorList=['#fee', '#ea4', '#0d0', '#09f', '#f65'];
-	chart.showLoading();chart.hideLoading();
-	// 定义图表属性
-	chart.setOption(option = {backgroundColor:"#333",title: {text: '打赏统计',subtext: '打赏金额占比',textStyle: {fontSize:20,fontWeight:'normal',color: ['#fff']},subtextStyle: {color: '#ccc',fontSize: 16},},grid: {bottom: 150,left: 0,right: '2%'},tooltip: {trigger: 'item',formatter: "{b} : {c} ({d}%)"},legend: {type: "scroll",orient: "vartical",top: "center",right: "0",itemWidth: 32,itemHeight: 16,itemGap: 16,textStyle: {color: '#fff',fontSize: 16,fontWeight: 0},data: ['< 1元', '1元 - 2元', '2元 - 5元', '5元 - 10元', '> 10元']},series: [{radius: ['30%', '75%'],center: ['42%', '50%'],type: 'pie',itemStyle: {normal: {color: function(params) {return colorList[params.dataIndex]}}},labelLine: {normal: {show:true,length:10,length2:10,lineStyle:{color:'#d3d3d3'},align:'right'},color: "#000",emphasis: {show: true}},label: {normal: {show:true,formatter:"{d}%",textStyle:{fontSize:18}}},data: [{name:'< 1元', value:a1},{name:'1元 - 2元', value:a2},{name:'2元 - 5元', value:a3},{name:'5元 - 10元', value:a4},{name:'> 10元', value:a5}],},{radius: ['50%', '51%'],center: ['42%', '50%'],type: 'pie',label: {normal: {show: false},emphasis: {show: false}},labelLine: {normal: {show: false},emphasis: {show: false}},animation: false,tooltip: {show: false},itemStyle: {normal: {color:'rgba(255,255,255,0.25)'}},data: [{value: 1,}],},{radius: ['78%', '79%'],center: ['42%', '50%'],type: 'pie',label: {normal: {show: false},emphasis: {show: false}},labelLine: {normal: {show: false},emphasis: {show: false}},animation: false,tooltip: {show: false},itemStyle: {normal: {color:'rgba(255,0,255,0.75)'}},data: [{value: 1,}],}]});
-}
-
 function Warning() {
 	return "<br><p class=\"g-color-red\">(原创博客，转载请注明 <a href=\"http://gaohr.win\" class=\"mywarning\" title=\"GaoHR blogs\"><b>GaoHR blogs: http://gaohr.win</b></a>)</p><br><p>关注新浪微博：<a href='http://weibo.com/531239592' target='_blank'>@斩之浪</a></p>";
 }
@@ -163,55 +119,6 @@ function China70() {
 			$("#timer").html("<div class=\"days\"><div class=\"numbers\">" + days + "</div>天</div><div class=\"hours\"><div class=\"numbers\">" + hours + "</div>时</div><div class=\"minutes\"><div class=\"numbers\">" + minutes + "</div>分</div><div class=\"seconds\"><div class=\"numbers\">" + seconds + "</div>秒</div></div>");
 		}, 1000);
 		*/
-}
-	
-function HotTopic() {
-	$("#others").append("<div class=\"notice\">" +
-						"<ul id=\"notice01\" class=\"noticTipTxt\">" +
-						"<li><a href=\"http://gaohr.win/site/special/2019/2019-09-14-dem-30m-cn.html\" target=\"_blank\">全国各省30m DEM数据免费下载 <img src=\"http://gaohr.win/img/others/hot001.gif\" width=\"22\"></a></li>" +
-						"<li><a href=\"http://gaohr.win/site/blogs/2019/2019-08-20-china-daily-ground-climate-data-extraction.html\" target=\"_blank\">中国地面气候资料数据提取Python程序 <img src=\"http://gaohr.win/img/others/hot001.gif\" width=\"22\"></a></li>" +
-						"<li><a href=\"http://gaohr.win/site/blogs/2019/2019-09-13-china-soil-type.html\" target=\"_blank\">中国土壤类型1km空间分布数据 <img src=\"http://gaohr.win/img/others/hot001.gif\" width=\"22\"></a></li>" +
-						"<li><a href=\"http://gaohr.win/site/blogs/2017/2017-04-18-GIS-basic-data-of-China.html\" target=\"_blank\">中国国家基础地理信息数据打包下载 <img src=\"http://gaohr.win/img/others/hot001.gif\" width=\"22\"></a></li>" +
-						"<li><a href=\"http://gaohr.win/site/special/2016/2016-05-11-agot-map.html\" target=\"_blank\">冰与火之歌：在线世界电子地图 <img src=\"http://gaohr.win/img/others/hot001.gif\" width=\"22\"></a></li>" +
-						"<li><a href=\"http://gaohr.win/site/blogs/2019/2019-05-27-arcgis-and-art.html\" target=\"_blank\">GISer情怀：GIS地图制图的艺术之美 <img src=\"http://gaohr.win/img/others/hot001.gif\" width=\"22\"></a></li>" +
-						"</ul></div><script type=\"text/javascript\" src=\"http://gaohr.win/js/scrolltext.js\"></script>");
-	
-	if(document.getElementById("notice01")){var scrollup = new ScrollText("notice01");scrollup.LineHeight = 36;scrollup.Amount = 1;scrollup.Delay = 20;scrollup.Start();scrollup.Direction = "down";}
-}
-	
-function Declare() {
-	Date.prototype.Format = function (fmt) {
-		var o = {"M+": this.getMonth() + 1,"d+": this.getDate(),"H+": this.getHours(),"m+": this.getMinutes(),"s+": this.getSeconds(),"q+": Math.floor((this.getMonth() + 3) / 3),"S": this.getMilliseconds()};
-		if(/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
-		for (var k in o)if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
-		return fmt;
-	}
-	var time = new Date().Format("yyyy-MM-dd HH:mm:ss");
-	$("#declareDiv").html("<p class=\"title\"><i class=\"icon-bullhorn\"></i><b> 网站主题</b></p>" +
-		"<div id=\"declare\">" +
-			"<div id=\"content\">" +
-				"<div id=\"code\">" +
-					"<span class=\"comments\">/**</span><br>" +
-					"<span class=\"comments space\">* Author: GaoHR</span><br>" +
-					"<span class=\"comments space\">* Date: " + time + "</span><br>" +
-					"<span class=\"comments space\">*/</span><br>" +
-					"<span class=\"var\">var</span> 博客主题 = <span class=\"string\">'GIS、遥感学科方向,个人综合类博客'</span><br>" +
-					"<span class=\"var\">var</span> 网站主旨 = <span class=\"string\">'记录生活，记录学习，分享快乐'</span><br> " +
-				"</div>" +
-			"</div>" +
-		"</div>");
-		$.fn.typewriter = function() {
-			this.each(function() {
-				var $ele = $(this), str = $ele.html(), progress = 0;
-				$ele.html('');
-				var timer = setInterval(function() {
-					var current = str.substr(progress, 1);
-					if (current == '<') {progress = str.indexOf('>', progress) + 1;} else {progress++;}$ele.html(str.substring(0, progress) + (progress & 1 ? '_' : ''));
-					if (progress >= str.length) {clearInterval(timer);}
-				}, 75);
-			});return this;
-		};
-		$("#code").typewriter();
 }
 	
 function gotoTop(min_height){
@@ -268,7 +175,6 @@ function Search() {
 		});
 	});
 }
-	
 function blogsSearch(keyword) {
 	// 搜索博客
 	$("#pop-cont").html("");
@@ -299,7 +205,6 @@ function blogsSearch(keyword) {
 							"</ul>")
 	}
 }
-	
 function findblog(key, bloglist,n, type) {
 	var type_mark = "";
 	if(type == 0) {
@@ -326,6 +231,13 @@ function PageViews() {
 	
 	if($(".topictopinfo")) {
 		$(".topictopinfo").append("<script async src='//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'></script><span id='busuanzi_container_page_pv' style='margin-left:10px;'>本专题访问量 <b><span class='g-color-green' id='busuanzi_value_page_pv'></span></b> 次</span>");
+	}
+}
+	
+// Links and follow us
+function followUs() {
+	if($("#followus")) {
+		$("#followus").html("<div class='row'><div class='col-md-8'><div class='item-spectial'><div class='portlet'><p class='portlet-title'><ion-icon name='git-merge'></ion-icon><span> 友情链接</span></p><a class='links-a' href='http://gaohr.win/' target='_blank'><img src='../img/brand/gaohr.win.jpg'></a><a class='links-a' href='http://gaohr.win/' target='_blank'><img src='../img/brand/gaohr.win.jpg'></a><a class='links-a' href='http://gaohr.win/' target='_blank'><img src='../img/brand/gaohr.win.jpg'></a></div></div></div><div class='col-sm-4'><div class='item-block g-bg-white'><div class='portlet'><p class='portlet-title'><ion-icon name='heart'></ion-icon><span> 关注我们</span></p><div class='row'><div class='col-xs-6 text-center'><p><i class='icon-wechat'></i>微信公众号</p><img src='../img/brand/wechat-code.jpg'></div><div class='col-xs-6 text-center'><p><i class='icon-sina'></i>官方微博</p><img src='../img/brand/sina-code.jpg'></div></div><hr><div class='row'><div class='col-xs-12 text-center'><a class='links-icon' href='https://github.com/topgeoscience/topgeoscience.github.io' target='_blank'><img src='../img/brand/github.png'></a><a class='links-icon' href='https://github.com/topgeoscience/topgeoscience.github.io' target='_blank'><img src='../img/brand/github.png'></a><a class='links-icon' href='https://github.com/topgeoscience/topgeoscience.github.io' target='_blank'><img src='../img/brand/github.png'></a><a class='links-icon' href='https://github.com/topgeoscience/topgeoscience.github.io' target='_blank'><img src='../img/brand/github.png'></a></div></div></div></div></div></div>");
 	}
 }
 	
