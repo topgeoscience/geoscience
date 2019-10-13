@@ -234,21 +234,18 @@ function gotoTop(min_height){
 };
 	
 function Search() {
-	$("body").append("<div id='popup-search' class='popup-search'><div class='title'><p id='p-title' class='g-text-bg no-indent'>查询结果</p><span class='close'>X</span></div><div id='pop-cont' class='cont'></div></div>");
+	$("body").append("<div id='popup-search' class='popup-search shadow-lg'><div class='title'><p id='p-title' class='g-text-bg no-indent'>查询结果</p><span class='close'>X</span></div><div id='pop-cont' class='cont'></div></div>");
 	// 屏幕居中
 	body_width = parseInt($(window).width());
 	body_height = parseInt($(window).height());
 	block_width = parseInt($("#popup-search").width());
 	block_height = parseInt($("#popup-search").height());
-
-	search_html = "<section class='g-search'><form><input id='input-value' type='search' placeholder='你想找什么？'><a id='g-search'><i class='icon-search g-text-bg'></i></a></form><p class='warning'>查询字段不能为空</p></section>"
-	$("#others").append(search_html);
 	
 	// 显示窗体
 	$("#g-search").click(function() {
 		var search_val = $("#input-value").val();
 		if(search_val != "") {
-			$("#p-title").html("查询 <i class='g-color-red'>" + search_val + "</i> 的结果");
+			$("#p-title").html("<img src='http://geoscience.top/img/logo.png' width='36' height='36'> 查询 <i class='g-color-red'>" + search_val + "</i> 的结果");
 			top_position = parseInt((body_height / 2.25) - (block_height / 2.25) + $(window).scrollTop());
 			if (body_height < block_height) {
 				top_position = 0 + $(window).scrollTop();
