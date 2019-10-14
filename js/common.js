@@ -122,13 +122,13 @@ function China70() {
 }
 	
 function gotoTop(min_height){
-	var gotoTop_html = "<div id='gotoTop'><ion-icon name='arrow-round-up'></ion-icon></div>";
+	var gotoTop_html = "<div id='gotoTop'><i class='icon ion-md-arrow-round-up'></i></div>";
 	$("body").append(gotoTop_html);
 	$("#gotoTop").click(
 		function(){$('html,body').animate({scrollTop:0}, 600);
 	}).hover(
 		function(){$(this).addClass("hover");$("#gotoTop").html('返回<br>顶部');},
-		function(){$(this).removeClass("hover");$("#gotoTop").html("<ion-icon name='arrow-round-up'></ion-icon>");
+		function(){$(this).removeClass("hover");$("#gotoTop").html("<i class='icon ion-md-arrow-round-up'></i>");
 	});
 	$(window).scroll(function(){
 		var s = $(window).scrollTop();
