@@ -8,6 +8,10 @@
 $(document).ready(function($) {
 	/*百度自动推送*/
 	$("body").append("<script>(function(){var bp = document.createElement('script');var curProtocol = window.location.protocol.split(':')[0];if (curProtocol === 'https') {bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';}else {bp.src = 'http://push.zhanzhang.baidu.com/push.js';}var s = document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(bp, s);})();</script>");
+	
+	/*百度统计*/
+	$("head").append("<script>var _hmt = _hmt || [];(function() {var hm = document.createElement('script');hm.src = 'https://hm.baidu.com/hm.js?6e18a8368614f59ef6fb2ec71ecab400';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s);})();</script>");
+	
 	// Share
 	if($("#shareit").length > 0) {
 		$("body").append("<script>window._bd_share_config={'common':{'bdSnsKey':{},'bdText':'','bdMini':'2','bdMiniList':false,'bdPic':'','bdStyle':'0','bdSize':'16'},'slide':{'type':'slide','bdImg':'4','bdPos':'right','bdTop':'100'}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>");
@@ -55,7 +59,7 @@ function ClustrMaps() {
 }
 
 function Copyright() {
-	$("footer").html("<img class='footer-logo' src='http://geoscience.top/img/logo.png' width='50'><a href='###'> 联系我们 </a><span>|</span><a href='###'> 技术援助 </a><span>|</span><a href='###'> 合作交流 </a><span>|</span><a href='###'> 公告专区 </a><div class='footer-text'><span> 服务时间 09:00-15:00) </span><span> 服务电话电话:+86 1xxxxxxxxxx </span><span> 地址:北京市海淀区邓庄南路9号 中国科学院遥感与数字地球研究所 </span></div><div class='footer-copy' id='copyright'>Copyright © <a href='http://geoscience.top/' target='_blank'>GeoScience <img src='http://geoscience.top/img/logo.png' width='16'></a> 2019-2020, All Rights Reserved, 京ICP备xxx号  <br>Powered by <a href='https://github.com/' target='_blank'>GitHub <ion-icon name='logo-github'></ion-icon></a></div>");
+	$("footer").html("<img class='footer-logo' src='http://geoscience.top/img/logo.png' width='50'><a href='###'> 联系我们 </a><span>|</span><a href='###'> 技术援助 </a><span>|</span><a href='###'> 合作交流 </a><span>|</span><a href='###'> 公告专区 </a><div class='footer-text'><span> 服务时间 09:00-15:00) </span><span> 服务电话:+86 1xxxxxxxxxx </span><span> 地址:北京市海淀区邓庄南路9号 中国科学院遥感与数字地球研究所 </span></div><div class='footer-copy' id='copyright'>Copyright © <a href='http://geoscience.top/' target='_blank'>GeoScience <img src='http://geoscience.top/img/logo.png' width='16'></a> 2019-2020, All Rights Reserved, 京ICP备xxx号  <br>Powered by <a href='https://github.com/' target='_blank'>GitHub <ion-icon name='logo-github'></ion-icon></a></div>");
 }
 
 function Comments() {
