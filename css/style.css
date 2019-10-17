@@ -43,6 +43,7 @@ a:hover {color:#f65;-webkit-transition: all 0.3s ease;transition: all 0.3s ease;
 .portlet .portlet-title a {color:#08e;float:right;margin-right:10px;}
 .portlet .portlet-title a:hover {color:#f65}
 
+.main-page .page-title {font-size:1.5em;margin:10px;}
 
 
 /***************/
@@ -78,6 +79,12 @@ a:hover {color:#f65;-webkit-transition: all 0.3s ease;transition: all 0.3s ease;
 .shadow-sm {box-shadow: 1px 3px 5px rgba(195,195,195,0.5)}
 .shadow-md {box-shadow: 2px 4px 8px rgba(195,195,195,0.75)}
 .shadow-lg {box-shadow: 5px 5px 10px rgba(195,195,195,1)}
+
+.percent-50 {width:50%;margin-left:25%;}
+.percent-60 {width:60%;margin-left:20%;}
+.percent-70 {width:70%;margin-left:15%;}
+.percent-80 {width:80%;margin-left:10%;}
+.percent-90 {width:90%;margin-left:5%;}
 
 .btn-blue {background-color:#2878c8;padding:3px;border-radius:3px;color:#fff;display:inline-block;}
 .btn-blue:hover {background-color:#295c8e;color:#fff}
