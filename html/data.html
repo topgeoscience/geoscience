@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/data.css">
 	<link type="image/png" href="../img/logo.ico" rel="shortcut icon">
     <title>GeoScience | 数据资源</title>
 </head>
@@ -84,12 +85,58 @@
 					<li class="active"><a href="#"><i class="icon ion-md-globe"></i> 数据</a></li>
 					<section class="g-search"><form><input id="input-value" type="search" placeholder="你想找什么？"><a id="g-search"><i class="icon ion-md-search"></i></a></form><p class="warning">查询字段不能为空</p></section>
 				</ol>
+				<div class="page-title"><i class="icon ion-md-globe"></i> 数据资源</div>
+				<hr>
 				<div class="row">
 					<div class="col-md-8">
-						8
+						<label>数据筛选：</label>
+						<div id="option-box" class="shadow-md">
+							<dl>
+								<dt>学科类型：</dt>
+								<dd>地理</dd>
+								<dd>水文</dd>
+								<dd>地质</dd>
+								<dd>环境</dd>
+								<dd>GIS</dd>
+								<dd>遥感</dd>
+							</dl>
+							<dl>
+								<dt>数据格式：</dt>
+								<dd>矢量</dd>
+								<dd>栅格</dd>
+								<dd>其他</dd>
+							</dl>
+							<dl>
+								<dt>收费形式：</dt>
+								<dd>免费</dd>
+								<dd>付费</dd>
+							</dl>
+							<dl class="select">
+								<dt>已选条件：</dt>
+							</dl>
+						</div>
+						<div class="item-block">
+							<div class="portlet">
+								<p class="portlet-title"><i class="icon ion-md-pricetags"></i><span> 数据列表</span></p>
+								
+							</div>
+						</div>
 					</div>
 					<div class="col-md-4">
-						4
+						<label>搜索关键词：</label>
+						<div class="input-group percent-80">
+							<span class="input-group-addon" id="basic-addon1">关键词：</span>
+							<input type="text" class="form-control" placeholder="Search for...">
+							<span class="input-group-btn">
+								<button class="btn btn-primary" type="button">搜索</button>
+							</span>
+						</div>
+						<div class="item-block">
+							<div class="portlet">
+								<p class="portlet-title"><i class="icon ion-md-pricetags"></i><span> 标签云</span></p>
+								
+							</div>
+						</div>
 					</div>
 				</div>
 				<!-- 各个版块 -->
@@ -124,7 +171,57 @@
 	<script src="../js/common.js" type="text/javascript"></script>
 	<script src="../js/cpop.js" type="text/javascript"></script>
 	<script>
-		
+		var dls = document.querySelectorAll('dl:not(.select)');
+		var selected=document.querySelector('.select');
+		for (var i = 0; i < dls.length; i++) {
+			dls[i].mark=false;	//给每一行的dl标签添加一条属性，用于对应下面的dd标签。我们约定如果这个属性的值为true表示对应的标签没有创建。如果值为false表示对应的标签已经创建了
+			select(i);
+		}
+		function select(n) {
+			var dds = dls[n].querySelectorAll('dd');
+			var prev=null;
+			var dd=null;	//每一行都需要创建一个dd标签，放到这里是为了如果标签已经被创建了，通过这个变量能够找到这个标签
+
+			for (var i = 0; i < dds.length; i++) {
+				dds[i].onclick = function () {
+					//给当前点击的添加一个高亮
+					//prev && (prev.className = '');
+					if(prev){
+						prev.className = ''
+					}
+					this.className = 'active';
+					prev = this;
+					//创建dd标签
+					var parent=this.parentNode;
+					if(!parent.mark){	//这个条件满足说明对应的dd标签还没有创建
+						dd=document.createElement('dd');
+						dd.innerHTML=this.innerHTML;
+						selected.appendChild(dd);
+						parent.mark=true;
+						
+					}else{
+						//走这里的时候说明对应的标签已经创建了，只需要把内容修改了就可以了
+						dd.innerHTML=this.innerHTML;
+					}
+					var span=document.createElement('span');
+					var This=this;
+					span.innerHTML='X';
+					span.onclick=function(){
+						//alert(1);
+						/*
+							点击关闭后要做的事情
+								1、移除掉dd
+								2、把上面点击的那个class去掉
+								3、父级身上的mark属性要更新
+						 */
+						selected.removeChild(dd);
+						This.className='';
+						parent.mark=false;
+					};
+					dd.appendChild(span);
+				};
+			}
+		}
 	</script>
 </body>
 
