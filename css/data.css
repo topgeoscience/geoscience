@@ -53,6 +53,9 @@ dd {
 	padding: 0 2px 0 10px;
 	background-color: #fff;
 }
+#option-box dl.select dd i{
+	font-style:normal;
+}
 #option-box dl.select dd span{
 	width: 25px;
 	height: 20px;
