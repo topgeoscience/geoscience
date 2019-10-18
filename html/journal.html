@@ -88,46 +88,57 @@
 				<div class="page-title"><i class="icon ion-md-globe"></i> 期刊投稿指南</div>
 				<hr>
 				<div class="row">
-					<div class="col-md-3">
-						<div class="portlet journal-type-list">
-							<div class="journal-type-list-title">领域列表</div>
-							<hr>
-							<a href="###" id="journal-type-01">地理学领域期刊 Top10</a>
-							<a href="###" id="journal-type-02">遥感领域期刊 Top10</a>
-							<a href="###" id="journal-type-03">环境领域期刊 Top10</a>
+					<div class="col-lg-12">
+						<div class="classes-wrap content clearfix">
+							<div class="classes-item active">
+								<i class="icon icon-login"></i>
+								<span class="text">遥感</span>
+							</div>
+							<div class="classes-item">
+								<i class="icon icon-config"></i>
+								<span class="text">地学</span>
+							</div>
+							<div class="classes-item">
+								<i class="icon icon-award"></i>
+								<span class="text">水文</span>
+							</div>
 						</div>
-					</div>
-					<div class="col-md-3">
-						<div class="portlet journal-list">
-							<div class="journal-list-title">期刊列表</div>
-							<hr>
-							<div>
-								<!-- Nav tabs -->
-								<ul class="nav nav-tabs" role="tablist">
-									<li role="presentation" class="active"><a href="#journal-sci" aria-controls="journal-sci" role="tab" data-toggle="tab">SCI</a></li>
-									<li role="presentation"><a href="#journal-cscd" aria-controls="journal-cscd" role="tab" data-toggle="tab">中文核心</a></li>
-								</ul>
-								<!-- Tab panes -->
-								<div class="tab-content">
-									<div role="tabpanel" class="tab-pane active" id="journal-sci">
-										<a href="###" id="type-01-journal-01-sci">Remote Sensing of Environment</a>
-										<a href="###" id="type-01-journal-02-sci">Tatal of Environment</a>
-										<a href="###" id="type-01-journal-03-sci">Remote Sensing</a>
-									</div>
-									<div role="tabpanel" class="tab-pane" id="journal-cscd">
-										<a href="###" id="type-01-journal-01-cscd">地理科学进展</a>
-										<a href="###" id="type-01-journal-02-cscd">地球信息科学学报</a>
-										<a href="###" id="type-01-journal-03-cscd">遥感学报</a>
-									</div>
+						<!--内容-->
+						<!--1-->
+						<div class="list-wrap content active">
+							<h3 class="classes-title list-title">
+								<i class="icon-question"></i>
+								<span class="list-title-text">遥感领域期刊</span>
+							</h3>
+							<div id="list-wrap-content">
+								<div class="list-content">
+									
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="portlet journal-info">
-							<div class="journal-info-title">期刊详细信息</div>
-							<hr>
-							期刊详细信息
+						<!--2-->
+						<div class="list-wrap content">
+							<h3 class="classes-title list-title">
+								<i class="icon-question"></i>
+								<span class="list-title-text">地学领域期刊</span>
+							</h3>
+							<div id="list-wrap-content">
+								<div class="list-content">
+									
+								</div>
+							</div>
+						</div>
+						<!--3-->
+						<div class="list-wrap content">
+							<h3 class="classes-title list-title">
+								<i class="icon-question"></i>
+								<span class="list-title-text">水文领域期刊</span>
+							</h3>
+							<div id="list-wrap-content">
+								<div class="list-content">
+									
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -149,8 +160,15 @@
 	
 	<script src="../js/common.js" type="text/javascript"></script>
 	<script src="../js/cpop.js" type="text/javascript"></script>
-	<script>
-		
+	
+	<script type="text/javascript">
+		$(function(){
+			$('.classes-wrap .classes-item').click(function(){
+				var i = $(this).index();
+				$(this).addClass('active').siblings().removeClass('active');
+				$('.list-wrap').eq(i).addClass('active').siblings().removeClass('active');
+			})
+		})
 	</script>
 </body>
 
