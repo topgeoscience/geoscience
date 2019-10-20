@@ -63,9 +63,11 @@ h3{font-weight: normal;}
 .journal-info-selfcite .journal-info-top-status {font-size:1.5em;}
 .journal-info-top {margin:15px 0;}
 .journal-info-top .journal-info-top-text {}
-.journal-info-top .journal-info-top-status {font-size:1.5em;}
+.journal-info-top .journal-info-top-status {font-size:1.5em;color:#aaa;}
+.journal-info-oa {margin:15px 0;}
+.journal-info-oa .journal-info-oa-status {font-size:1.5em;color:#aaa;}
 .journal-info-if {margin:15px 0;}
-.journal-info-if .journal-info-if-chart {width:100%;height:200px}
+.journal-info-if #chart-rs, #chart-geo, #chart-hydro{width:400px;height:200px;}
 
 
 
