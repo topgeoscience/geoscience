@@ -8,12 +8,12 @@ h3{font-weight: normal;}
 .content{width: 100%;margin: 0 auto;position: relative;}
 .content:after{content: '';clear: both;height: 0;display: block;}
 .clearfix:after{content: " ";display: table;clear: both;width: 100%;}
-.classes-wrap .classes-item{width: 16.66667%;float: left;cursor: pointer;padding: 20px 0 20px;position: relative;z-index: 1;overflow: hidden;}
+.classes-wrap .classes-item{width: 16%;float:left;cursor:pointer;padding:10px 0;position:relative;z-index:1;overflow:hidden;}
 .classes-wrap .classes-item.active:after{display: block;}
-.classes-wrap .classes-item:after{content: " ";position: absolute;z-index: 2;background: url(../img/journal/icons.png) no-repeat -56px -7px;width: 36px;height: 18px;bottom: 0;left: 50%;margin-left: -18px;display: none;}
+.classes-wrap .classes-item:after{content:" ";position:absolute;z-index:2;background: url(../img/journal/icons.png) no-repeat -56px -7px;width:36px;height:18px;bottom:0;left:50%;margin-left:-18px;display:none;}
 .classes-wrap .classes-item .icon{width:60px;height:60px;background-size:60px;background-repeat:no-repeat;display:block;margin:0 auto;}
 .classes-wrap .classes-item.active .text{color:#000;font-weight:700;}
-.classes-wrap .classes-item .text{font-size: 16px;color: #535353;display: block;text-align: center;font-weight: 400;margin-top: 15px;}
+.classes-wrap .classes-item .text{font-size:1.2em;display:block;text-align:center;font-weight:400;margin-top:5px;}
 
 .classes-wrap .classes-item .icon.icon-satellite{background-image: url(../img/journal/satellite-gray.png);}
 .classes-wrap .classes-item:hover .icon.icon-satellite,
@@ -33,7 +33,7 @@ h3{font-weight: normal;}
 
 
 /*内容*/
-.list-wrap{min-height:540px;background: #fff;padding: 20px;box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);margin-bottom:50px;box-sizing: border-box;display: none;}
+.list-wrap{min-height:640px;background:#fff;padding:20px;box-shadow:0 0 10px rgba(0, 0, 0, 0.1);margin-bottom:50px;box-sizing:border-box;display:none;}
 .list-wrap.active{display: block;}
 .list-wrap .list-title{font-size: 22px;color: #000;margin-bottom: 20px;}
 .list-wrap .list-title .icon-question{width: 26px;height: 29px;display: inline-block;vertical-align: -8px;margin-right: 10px;background: url(../img/journal/icons.png) no-repeat -10px -7px;}
@@ -42,4 +42,11 @@ h3{font-weight: normal;}
 .list-wrap .list-content .list-item a:hover{color: #4381fd;}
 .list-wrap .list-content .list-item a:before{content: " ";background: #b2b2b2;width: 4px;height: 4px;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;-ms-border-radius: 50%;-o-border-radius: 50%;position: absolute;z-index: 1;top: 42px;left: 0;}
 
+.journal-name-list {border-right:1px solid #aaa;}
+.journal-name {display:block;padding:5px 10px;box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);margin:10px;}
+.journal-name:hover {background:rgba(55, 155, 255, 0.1);}
+.journal-name [class^="rank-"] {color:#fff;background:#666;padding:0 5px;border-radius:50%;margin-right:10px}
+.journal-name .rank-1 {background:#f00}
+.journal-name .rank-2 {background:#f80}
+.journal-name .rank-3 {background:#fc0}
 
