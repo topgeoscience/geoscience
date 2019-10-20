@@ -36,7 +36,7 @@ h3{font-weight: normal;}
 .list-wrap{min-height:640px;background:#fff;padding:20px;box-shadow:0 0 10px rgba(0, 0, 0, 0.1);margin-bottom:50px;box-sizing:border-box;display:none;}
 .list-wrap.active{display: block;}
 .list-wrap .list-title{font-size: 22px;color: #000;margin-bottom: 20px;}
-.list-wrap .list-title .icon-question{width: 26px;height: 29px;display: inline-block;vertical-align: -8px;margin-right: 10px;background: url(../img/journal/icons.png) no-repeat -10px -7px;}
+.list-wrap .list-title .icon-list{width: 26px;height: 29px;display: inline-block;vertical-align: -8px;margin-right: 10px;background: url(../img/journal/icons.png) no-repeat -10px -7px;}
 .list-wrap .list-content .list-item{display: block;padding: 32px 0 32px 13px;position: relative;z-index: 1;border-bottom: 1px solid #e5e5e5;font-size: 16px;line-height: 21px;}
 .list-wrap .list-content .list-item a{text-decoration: none;color: #535353;}
 .list-wrap .list-content .list-item a:hover{color: #4381fd;}
@@ -50,4 +50,23 @@ h3{font-weight: normal;}
 .journal-name .rank-2 {background:#f80}
 .journal-name .rank-3 {background:#fc0}
 .journal-name-list .active {color:#fff;background:#08e;}
+
+.journal-info-name {font-size:1.5em}
+.journal-info-abbre {color:#aaa}
+.journal-info-intro {margin:15px 0;font-size:0.9em;}
+.journal-info-scope {position:relative;border-left:7px solid #fcc;border-right:7px solid #fcc;border-top:1px solid #fcc;border-bottom:1px solid #fcc;margin:20px 0 0 0;padding:10px;}
+.journal-info-scope .journal-info-scope-title {position:absolute;left:2%;top:-20px;background:#fefefe;color:#f99;margin:5px;padding:0 5px;font-weight:bold;}
+.journal-info-href {margin:15px 0;}
+.journal-info-selfcite {margin:15px 0;}
+.journal-info-selfcite #self-citation{margin-top:5px;width:60%;}
+.journal-info-selfcite .percentCount{float:right;margin-top:-18px;margin-right:-50%;font-weight:bold;}
+.journal-info-selfcite .journal-info-top-status {font-size:1.5em;}
+.journal-info-top {margin:15px 0;}
+.journal-info-top .journal-info-top-text {}
+.journal-info-top .journal-info-top-status {font-size:1.5em;}
+.journal-info-if {margin:15px 0;}
+.journal-info-if .journal-info-if-chart {width:100%;height:200px}
+
+
+
 
