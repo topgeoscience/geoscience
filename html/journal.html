@@ -117,8 +117,8 @@
 							<div id="list-wrap-content">
 								<div class="list-content">
 									<div class="row">
-										<div class="col-md-4 journal-name-list" id="journal-rs"></div>
-										<div class="col-md-8 journal-info"></div>
+										<div class="col-md-5 journal-name-list" id="journal-rs"></div>
+										<div class="col-md-7 journal-info"></div>
 									</div>
 								</div>
 							</div>
@@ -132,8 +132,8 @@
 							<div id="list-wrap-content">
 								<div class="list-content">
 									<div class="row">
-										<div class="col-md-4 journal-name-list" id="journal-geo"></div>
-										<div class="col-md-8 journal-info"></div>
+										<div class="col-md-5 journal-name-list" id="journal-geo"></div>
+										<div class="col-md-7 journal-info"></div>
 									</div>
 								</div>
 							</div>
@@ -147,8 +147,8 @@
 							<div id="list-wrap-content">
 								<div class="list-content">
 									<div class="row">
-										<div class="col-md-4 journal-name-list" id="journal-hydro"></div>
-										<div class="col-md-8 journal-info"></div>
+										<div class="col-md-5 journal-name-list" id="journal-hydro"></div>
+										<div class="col-md-7 journal-info"></div>
 									</div>
 								</div>
 							</div>
@@ -162,8 +162,8 @@
 							<div id="list-wrap-content">
 								<div class="list-content">
 									<div class="row">
-										<div class="col-md-4 journal-name-list" id="journal-compute"></div>
-										<div class="col-md-8 journal-info"></div>
+										<div class="col-md-5 journal-name-list" id="journal-compute"></div>
+										<div class="col-md-7 journal-info"></div>
 									</div>
 								</div>
 							</div>
@@ -191,6 +191,7 @@
 	<script src="../js/cpop.js" type="text/javascript"></script>
 	
 	<script type="text/javascript">
+		var currentEle = "";
 		$(function(){
 			// 切换图标
 			$('.classes-wrap .classes-item').click(function(){
@@ -201,20 +202,29 @@
 			
 			// 读取期刊信息
 			for(var i = 0; i < journal_rs.length; i++) {
-				$("#journal-rs").append("<a href='###' onclick='displayInfo(\"" + journal_rs[i].id + "\")' class='journal-name'><span class='rank-" + journal_rs[i].rank + "'>" + journal_rs[i].rank + "</span>" + journal_rs[i].name + "</a>");
+				$("#journal-rs").append("<a href='###' id='" + journal_rs[i].id + "' onclick='displayInfo(\"" + journal_rs[i].id + "\")' class='journal-name'><span class='rank-" + journal_rs[i].rank + "'>" + journal_rs[i].rank + "</span>" + journal_rs[i].name + "</a>");
 			}
 			
 			for(var i = 0; i < journal_geo.length; i++) {
-				$("#journal-geo").append("<a href='###' onclick='displayInfo(\"" + journal_geo[i].id + "\")' class='journal-name'><span class='rank-" + journal_geo[i].rank + "'>" + journal_geo[i].rank + "</span>" + journal_geo[i].name + "</a>");
+				$("#journal-geo").append("<a href='###' id='" + journal_geo[i].id + "' onclick='displayInfo(\"" + journal_geo[i].id + "\")' class='journal-name'><span class='rank-" + journal_geo[i].rank + "'>" + journal_geo[i].rank + "</span>" + journal_geo[i].name + "</a>");
 			}
 			for(var i = 0; i < journal_hydro.length; i++) {
-				$("#journal-hydro").append("<a href='###' onclick='displayInfo(\"" + journal_hydro[i].id + "\")' class='journal-name'><span class='rank-" + journal_hydro[i].rank + "'>" + journal_hydro[i].rank + "</span>" + journal_hydro[i].name + "</a>");
+				$("#journal-hydro").append("<a href='###' id='" + journal_hydro[i].id + "' onclick='displayInfo(\"" + journal_hydro[i].id + "\")' class='journal-name'><span class='rank-" + journal_hydro[i].rank + "'>" + journal_hydro[i].rank + "</span>" + journal_hydro[i].name + "</a>");
 			}
 			
 		})
 		
 		function displayInfo(id) {
+			if(currentEle != "") {
+				$("#" + currentEle).removeClass("active");
+				$("#" + id).addClass("active");
+			} else {
+				$("#" + id).addClass("active");
+			}
+			
+			
 			$(".journal-info").html(id);
+			currentEle = id;
 		}
 	</script>
 </body>
