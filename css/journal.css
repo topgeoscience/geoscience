@@ -31,16 +31,16 @@ h3{font-weight: normal;}
 .classes-wrap .classes-item:hover .icon.icon-compute,
 .classes-wrap .classes-item.active .icon.icon-compute{background-image: url(../img/journal/compute-blue.png);}
 
-
 /*内容*/
+.journal-content {min-height:640px;background:#fff;padding:20px;box-shadow:0 0 10px rgba(0, 0, 0, 0.1);margin-bottom:50px;box-sizing:border-box;}
+.journal-content .icon-list{width: 26px;height: 29px;display: inline-block;vertical-align: -8px;margin-right: 10px;background: url(../img/journal/icons.png) no-repeat -10px -7px;}
+
+
 .list-wrap{min-height:640px;background:#fff;padding:20px;box-shadow:0 0 10px rgba(0, 0, 0, 0.1);margin-bottom:50px;box-sizing:border-box;display:none;}
 .list-wrap.active{display: block;}
 .list-wrap .list-title{font-size: 22px;color: #000;margin-bottom: 20px;}
 .list-wrap .list-title .icon-list{width: 26px;height: 29px;display: inline-block;vertical-align: -8px;margin-right: 10px;background: url(../img/journal/icons.png) no-repeat -10px -7px;}
-.list-wrap .list-content .list-item{display: block;padding: 32px 0 32px 13px;position: relative;z-index: 1;border-bottom: 1px solid #e5e5e5;font-size: 16px;line-height: 21px;}
-.list-wrap .list-content .list-item a{text-decoration: none;color: #535353;}
-.list-wrap .list-content .list-item a:hover{color: #4381fd;}
-.list-wrap .list-content .list-item a:before{content: " ";background: #b2b2b2;width: 4px;height: 4px;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;-ms-border-radius: 50%;-o-border-radius: 50%;position: absolute;z-index: 1;top: 42px;left: 0;}
+.list-wrap .list-content {}
 
 .journal-name-list {border-right:1px solid #aaa;}
 .journal-name {display:block;padding:5px 10px;box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);margin:10px;}
@@ -51,6 +51,7 @@ h3{font-weight: normal;}
 .journal-name .rank-3 {background:#fc0}
 .journal-name-list .active {color:#fff;background:#08e;}
 
+.journal-info {padding:5px 20px;}
 .journal-info-name {font-size:1.5em}
 .journal-info-abbre {color:#aaa}
 .journal-info-intro {margin:15px 0;font-size:0.9em;}
@@ -63,11 +64,11 @@ h3{font-weight: normal;}
 .journal-info-selfcite .journal-info-top-status {font-size:1.5em;}
 .journal-info-top {margin:15px 0;}
 .journal-info-top .journal-info-top-text {}
-.journal-info-top .journal-info-top-status {font-size:1.5em;color:#aaa;}
+.journal-info-top .journal-info-top-status {font-size:1.5em;color:#ccc;}
 .journal-info-oa {margin:15px 0;}
-.journal-info-oa .journal-info-oa-status {font-size:1.5em;color:#aaa;}
+.journal-info-oa .journal-info-oa-status {font-size:1.5em;color:#ccc;}
 .journal-info-if {margin:15px 0;}
-.journal-info-if #chart-rs, #chart-geo, #chart-hydro{width:400px;height:200px;}
+.journal-info-if #chart-if {width:100%;height:200px;}
 
 
 
