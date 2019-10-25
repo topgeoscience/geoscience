@@ -8,8 +8,9 @@
 	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css">
     <link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/conference.css">
 	<link type="image/png" href="../img/logo.ico" rel="shortcut icon">
-    <title>GeoScience | 会议通知</title>
+    <title>GeoScience | 会议信息</title>
 </head>
 <body>
 	<!-- 头部导航栏部分  start -->
@@ -86,10 +87,54 @@
 				</ol>
 				<div class="row">
 					<div class="col-md-8">
-						8
+						<div class="page-title"><i class="icon ion-md-desktop"></i>  国内外会议信息</div>
+						<hr>
+						<div id="option-box" class="shadow-md">
+							<dl>
+								<dt>会议时间：</dt>
+								<dd id="type-01">投稿开放时间</dd>
+								<dd id="type-02">摘要截至时间</dd>
+								<dd id="type-03">会议举办时间</dd>
+								<dd id="type-04">历史会议信息</dd>
+							</dl>
+							<dl>
+								<dt>会议举办地：</dt>
+								<dd id="format-01">亚洲</dd>
+								<dd id="format-02">欧洲</dd>
+								<dd id="format-03">美洲</dd>
+								<dd id="format-04">大洋洲</dd>
+								<dd id="format-05">非洲</dd>
+							</dl>
+							<dl>
+								<dt>会议形式：</dt>
+								<dd id="online-01">中文</dd>
+								<dd id="online-02">英文</dd>
+							</dl>
+							<dl class="select">
+								<dt>已选条件：</dt>
+								<button id="query-02" class="btn btn-warning pull-right" type="button" style="margin-top:7px">查询</button>
+							</dl>
+						</div>
+						<div class="item-block">
+							<div class="portlet">
+								<p class="portlet-title"><i class="icon ion-md-pricetags"></i><span>会议列表</span></p>
+								
+							</div>
+						</div>
 					</div>
 					<div class="col-md-4">
-						4
+						<div class="input-group percent-100">
+								<input type="text" class="form-control" placeholder="Search for...">
+								<span class="input-group-btn">
+									<button id="query-01" class="btn btn-primary" type="button">搜索</button>
+								</span>
+						</div>
+						<div class="item-block">
+							<div class="portlet">
+								<p class="portlet-title"><i class="icon ion-md-pricetags"></i><span>标签云</span></p>
+								
+							</div>
+						</div>
 					</div>
 				</div>
 				<!-- 各个版块 -->
@@ -124,7 +169,70 @@
 	<script src="../js/common.js" type="text/javascript"></script>
 	<script src="../js/cpop.js" type="text/javascript"></script>
 	<script>
+		var dls = document.querySelectorAll('dl:not(.select)');
+		var selected = document.querySelector('.select');
+		for (var i = 0; i < dls.length; i++) {
+			dls[i].mark=false;	//给每一行的dl标签添加一条属性，用于对应下面的dd标签。我们约定如果这个属性的值为true表示对应的标签没有创建。如果值为false表示对应的标签已经创建了
+			select(i);
+		}
+		function select(n) {
+			var dds = dls[n].querySelectorAll('dd');
+			var prev=null;
+			var dd=null;	//每一行都需要创建一个dd标签，放到这里是为了如果标签已经被创建了，通过这个变量能够找到这个标签
+
+			for (var i = 0; i < dds.length; i++) {
+				dds[i].onclick = function () {
+					//给当前点击的添加一个高亮
+					if(prev){
+						prev.className = ''
+					}
+					this.className = 'active';
+					prev = this;
+					//创建dd标签
+					var parent=this.parentNode;
+					if(!parent.mark){	//这个条件满足说明对应的dd标签还没有创建
+						dd=document.createElement('dd');
+						dd.innerHTML="<i>" + this.innerHTML + "</i>";
+						selected.appendChild(dd);
+						parent.mark=true;
+						
+					}else{
+						//走这里的时候说明对应的标签已经创建了，只需要把内容修改了就可以了
+						dd.innerHTML="<i>" + this.innerHTML + "</i>";
+					}
+					//alert(dd.innerHTML);
+					var span = document.createElement('span');
+					var This=this;
+					span.innerHTML='X';
+					span.onclick=function(){
+						//alert(1);
+						/*
+							点击关闭后要做的事情
+								1、移除掉dd
+								2、把上面点击的那个class去掉
+								3、父级身上的mark属性要更新
+						 */
+						selected.removeChild(dd);
+						This.className='';
+						parent.mark=false;
+					};
+					dd.appendChild(span);
+				};
+			}
+		}
 		
+		$("#query-01").click(function() {
+			alert("关键字查询");
+		});
+		
+		$("#query-02").click(function() {
+			var selectList = new Array();
+			var slen = $(".select i").length;
+			for(var i = 0; i < slen; i++) {
+				selectList.push($(".select i").eq(i).html());
+			}
+			alert(selectList.join(";"))
+		});
 	</script>
 </body>
 
