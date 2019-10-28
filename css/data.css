@@ -33,6 +33,10 @@ dd {
 	cursor: pointer;
 }
 
+#option-box dd:hover {
+	color: #f65;
+}
+
 #option-box dd.active {
 	color: #08f;
 	font-weight: bold;
@@ -70,3 +74,182 @@ dd {
 #option-box dl.select dd span:hover {
 	background: #f65;
 }
+
+.item-block {width:100%;min-height:400px;color:#333;background:rgba(205,235,255,0.05);margin-top:20px}
+
+.container{
+  color: #222;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.wrapper{
+  padding: 0;
+}
+.card{
+  min-height:500px;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 6px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease-in-out;
+  transition:All 0.2s ease-in-out;
+  -webkit-transition:All 0.2s ease-in-out;
+  -moz-transition:All 0.2s ease-in-out;
+  -o-transition:All 0.2s ease-in-out;
+  z-index:9999;
+}
+.card:hover {box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);transform:translate(0,-12px);-webkit-transform:translate(0,-12px);-moz-transform:translate(0,-12px);-o-transform:translate(0,-12px);-ms-transform:translate(0,-12px);transition:All 0.2s ease-in-out;-webkit-transition:All 0.2s ease-in-out;-moz-transition:All 0.2s ease-in-out;-o-transition:All 0.2s ease-in-out;}
+.card:hover .card_type span {
+  color: #07c;
+  font-weight: 500;
+  transition:All 0.3s ease-in-out;
+}
+.card:hover .card_new span {
+  background: rgba(15,105,205,0.85);
+  color: #fff;
+  transition:All 0.3s ease-in-out;
+}
+.card:hover .card_size span {
+  background: rgba(255,205,205,0.15);
+  color: #a70;
+  border: 1px solid #fc7;
+  transition:All 0.3s ease-in-out;
+}
+.card:hover .card_owner a {
+  color: #f65;
+  transition:All 0.3s ease-in-out;
+}
+.card:hover .card_class {
+  opacity: 0.5;
+  transition:All 0.3s ease-in-out;
+}
+.card:hover .card_title {
+  background: rgba(0,0,0,0.75);
+  transition:All 0.3s ease-in-out;
+}
+.card_picture{
+  display: block;
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  cursor:pointer;
+}
+.card-infos{
+  padding: 20px;
+  background: #fff;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.card_title{
+  font-size: 1.2em;
+  padding: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: -72px 0 0 0;
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  transition:All 0.3s ease-in-out;
+}
+.card_class{
+  position:absolute;
+  font-size: 1.2em;
+  padding: 10px 5px;
+  font-weight: 500;
+  line-height: 1.5;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border:5px solid rgba(255,255,255,0.9);
+  border-radius: 50%;
+}
+
+.card_text{
+  font-size: 0.9em;
+  font-weight: 300;
+  background:rgba(0, 0, 0, 0.05);
+  margin: 0;
+  color: #333;
+  padding:5px;
+  height:100px;
+  overflow-y:scroll;
+}
+.card_online, .card_type, .card_size, .card_new, .card_owner {
+  font-weight: 300;
+  margin-top: 5px;
+  color: #333;
+}
+.card_online span{
+  font-size: 0.9em;
+  padding: 6px 6px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-top: 10px;
+  text-indent:0;
+  background: rgba(155,155,155,0.75);
+  border-radius: 10px;
+  color: #fff;
+}
+.card_type span {
+  font-size: 1.2em;
+  font-weight: 300;
+  padding:2px;
+  margin-top: 10px;
+  color: #666;
+}
+.card_size span {
+  font-size: 1.2em;
+  font-weight: 300;
+  padding:2px;
+  margin-top: 10px;
+  color: #666;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+.card_new span {
+  font-size: 1.35em;
+  font-weight: 300;
+  padding:2px 5px;
+  margin-top: 10px;
+  color: #666;
+  border-radius: 5px;
+}
+.card_owner .seller_avatar {
+  width: 36px;
+}
+.card_owner a {
+  color: #fff;
+  font-weight: 300;
+  margin: 0;
+  float: right;
+}
+.card_owner b {
+  color: #f65;
+}
+.card_seller_code {
+  width: 80px;
+  text-align: center;
+}
+.card_status {
+  position:absolute;
+  bottom:100px;
+  right:10px;
+}
+.card_status img {
+  width:50%;
+  margin-left:55%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
