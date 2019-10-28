@@ -33,6 +33,10 @@ dd {
 	cursor: pointer;
 }
 
+#option-box dd:hover {
+	color: #f65;
+}
+
 #option-box dd.active {
 	color: #08f;
 	font-weight: bold;
