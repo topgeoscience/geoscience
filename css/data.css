@@ -75,7 +75,7 @@ dd {
 	background: #f65;
 }
 
-.item-block {width:100%;min-height:400px;color:#333;background:rgba(205,235,255,0.05);margin-top:20px}
+.item-block {width:100%;height:auto;min-height:400px;color:#333;background:rgba(205,235,255,0.05);margin-top:20px}
 
 .container{
   color: #222;
@@ -91,6 +91,7 @@ dd {
   min-height:500px;
   background: rgba(255, 255, 255, 0);
   border-radius: 6px;
+  margin-bottom:20px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -113,8 +114,8 @@ dd {
   transition:All 0.3s ease-in-out;
 }
 .card:hover .card_size span {
-  background: rgba(255,205,205,0.15);
-  color: #a70;
+  background: rgba(255,205,205,0.1);
+  color: #f65;
   border: 1px solid #fc7;
   transition:All 0.3s ease-in-out;
 }
@@ -202,7 +203,7 @@ dd {
 .card_size span {
   font-size: 1.2em;
   font-weight: 300;
-  padding:2px;
+  padding:0 2px;
   margin-top: 10px;
   color: #666;
   border: 1px solid #fff;
@@ -242,7 +243,10 @@ dd {
   margin-left:55%;
 }
 
-
+#data-tags a {background:#fff !important;padding:3px;margin:5px;border-radius:5px;display:inline-block;}
+#data-tags a:hover {background:#09f !important;color:#fff !important}
+#data-tags a:hover i {color:#acf !important}
+#data-tags i {color:#d85546 !important;}
 
 
 
