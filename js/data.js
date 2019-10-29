@@ -52,9 +52,27 @@ function select(n) {
 		};
 	}
 }
-		
+	
 $("#query-01").click(function() {
-	alert("关键字查询");
+	var search_val = $("#query-value").val();
+	if(search_val != "") {
+		$("#data-list").html("");
+		$('#data-list').append("<div class='col-md-4'></div><div class='col-md-4'><i id='data-loading' class='loading-3'></div><div class='col-md-4'></div>")
+		setTimeout(function() {
+			$("#data-loading").remove();
+			var res = "";
+			for(var b = 0; b < data_list.length; b++) {
+				if(data_list[b].name.indexOf(search_val) != -1 || data_list[b].intro.indexOf(search_val) != -1) {
+					var blogcon = showDataList(data_list, b);
+					var blogcon_new = blogcon.split(search_val);
+					res += blogcon_new.join('<span style="color:#f65;padding:0 2px;border-radius:2px">' + search_val + '</span>');
+				}
+			}
+			$('#data-list').append(res);
+		}, 1500);
+	} else {
+		alert("查询字段不能为空！");
+	}
 });
 	
 // 全部条件
@@ -99,7 +117,7 @@ $("#query-02").click(function() {
 			}
 		}
 		if(data_count == 0) {
-			$("#data-list").html("未查询到结果！");
+			$("#data-list").html("<p class='g-color-red text-center'>未查询到结果！</p>");
 		}
 				
 	}, 1500);
@@ -164,8 +182,29 @@ function tagssize(n) {
 	}
 }
 	
+// 读取标签
+function readtags(n) {
+	tagslist = "";
+	for(t = 0; t < data_list[n].tags.length; t++) {
+		tagslist += "<a href='###' style='font-size:9px'>" + data_list[n].tags[t] + "</a>";
+	}
+	return tagslist;
+}
+	
 function getData(tag) {
-	alert("OK")
+	// 先清空列表
+	$("#data-list").html("");
+	$('#data-list').append("<div class='col-md-4'></div><div class='col-md-4'><i id='data-loading' class='loading-3'></div><div class='col-md-4'></div>")
+	setTimeout(function() {
+		$("#data-loading").remove();
+		for(i = 0; i < data_list.length; i++) {
+			for(t = 0; t < data_list[i].tags.length; t++) {
+				if(data_list[i].tags[t] == tag) {
+					$("#data-list").append(showDataList(data_list, i));
+				}
+			}
+		}
+	}, 2000);
 }
 	
 function getAllData() {
@@ -178,8 +217,7 @@ function getAllData() {
 		for(var i = 0; i < data_list.length; i++) {
 			$("#data-list").append(showDataList(data_list, i));
 		}
-	}, 1500);
-	
+	}, 2000);
 }
 	
 	
