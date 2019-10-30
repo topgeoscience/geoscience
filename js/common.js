@@ -10,8 +10,8 @@ $(document).ready(function($) {
 	$("body").append("<script>(function(){var bp = document.createElement('script');var curProtocol = window.location.protocol.split(':')[0];if (curProtocol === 'https') {bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';}else {bp.src = 'http://push.zhanzhang.baidu.com/push.js';}var s = document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(bp, s);})();</script>");
 	
 	/*百度统计*/
-	$("head").append("<script>var _hmt = _hmt || [];(function() {var hm = document.createElement('script');hm.src = 'https://hm.baidu.com/hm.js?6e18a8368614f59ef6fb2ec71ecab400';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s);})();</script>");
-	$("head").append("<script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?6cd77d905b12600618bce0a092701c67";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script>");
+	$("head").append("<script>var _hmt_gao = _hmt_gao || [];(function() {var hm_gao = document.createElement('script');hm_gao.src = 'https://hm.baidu.com/hm.js?6e18a8368614f59ef6fb2ec71ecab400';var s_gao = document.getElementsByTagName('script')[0]; s_gao.parentNode.insertBefore(hm_gao, s_gao);})();</script>");
+	$("head").append("<script>var _hmt_yi = _hmt_yi || [];(function() {var hm_yi = document.createElement('script');hm_yi.src = 'https://hm.baidu.com/hm.js?6cd77d905b12600618bce0a092701c67';var s_yi = document.getElementsByTagName('script')[0]; s_yi.parentNode.insertBefore(hm_yi, s_yi);})();</script>");
 
 });
 	

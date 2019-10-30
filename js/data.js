@@ -69,7 +69,7 @@ $("#query-01").click(function() {
 				}
 			}
 			$('#data-list').append(res);
-		}, 1500);
+		}, 2000);
 	} else {
 		alert("查询字段不能为空！");
 	}
@@ -120,15 +120,14 @@ $("#query-02").click(function() {
 			$("#data-list").html("<p class='g-color-red text-center'>未查询到结果！</p>");
 		}
 				
-	}, 1500);
+	}, 2000);
 });
-	
-	
 	
 for(var i = 0; i < data_list.length; i++) {
 	$("#data-list").append(showDataList(data_list, i));
 }
 	
+// 加载数据信息
 function showDataList(data_list, i) {
 	return "<div class='col-md-4' id='data-x-" + data_list[i].id + "' name='" + data_list[i].id + "'><div class='card'><p class='card_class'>" + data_list[i].type + "</p><a href='" + data_list[i].url + "'><img class='card_picture' src='../img/data/data-" + data_list[i].id + ".jpg' alt=''></a><p class='card_title'>" + data_list[i].name + "</p><div class='card-infos'><p class='card_text'>" + data_list[i].intro + "</p><p class='card_type'>数据格式：<span>" + data_list[i].format + "</span></p><p class='card_size'>数据大小：<span>" + data_list[i].size + "</span></p><p class='card_online'>获取方式：<span id='card_online_span_" + data_list[i].id + "'>" + data_list[i].online + "</span><hr><p class='card_owner'>数据提供者：<img class='seller_avatar' src='http://gaohr.win/site/special/2019/2019-09-27-idle-goods/images/avatar/a" + data_list[i].avatar + ".jpg' alt=''><a class='btn-mini' href='###' data-toggle='popover' title='" + data_list[i].owner + "' data-html='true' data-content='" + data_list[i].ownerinfo + "' data-placement='top' data-trigger='focus' >点击此处，查看提供者信息</a></p></div></div></div>"
 }
@@ -146,8 +145,6 @@ $("div[id^='data-x-']").hover(function() {
 	$("#card_online_span_" + xid).css("background", "rgba(155,155,155,0.75)")
 	
 });
-	
-	
 	
 //Data tags
 var tagscon = "";
