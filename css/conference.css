@@ -74,3 +74,22 @@ dd {
 #option-box dl.select dd span:hover {
 	background: #f65;
 }
+
+.conference-info {padding:10px;}
+.conference-info .c-picture {width:100%;padding:0 10px;}
+.conference-info .c-info {border-left:3px solid #f65;}
+.conference-info .c-title {font-size:1.5em;}
+.conference-info .c-title .c-type {color:#ff0;padding:2px 5px;border-radius:5px;font-size:0.6em;margin-left:20px;}
+.conference-info .c-title .c-loc {color:#fff;padding:2px 5px;border-radius:5px;font-size:0.6em;margin-left:20px;}
+.conference-info .c-intro {font-size:0.9em;padding:3px;background:rgba(0, 0, 0, 0.05);}
+.conference-info .c-date {color:#555;font-size:1em;}
+.conference-info .c-date span {display:inline-block;margin:0 20px;}
+.conference-info .c-date i {font-size:1.25em;}
+
+
+
+
+
+
+
+

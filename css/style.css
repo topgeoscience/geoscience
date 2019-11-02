@@ -52,6 +52,12 @@ a:hover {color:#f65;-webkit-transition: all 0.3s ease;transition: all 0.3s ease;
 .index-journal-info .rank-3 {background:#fc0}
 .index-journal-info a .type {margin:0 5px;color:#555;}
 
+.index-conference-info {padding:5px;}
+.index-conference-info a {margin:10px 0;}
+.index-conference-info a .name {margin:0 5px;}
+.index-conference-info a img {width:76px;}
+.index-conference-info a .type {margin:0 5px;color:#555;}
+
 .index-data-info {padding:5px;}
 .index-data-info a {margin:10px 0;}
 .index-data-info a img {width:32px;}
