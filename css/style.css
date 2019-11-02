@@ -22,7 +22,7 @@ a:hover {color:#f65;-webkit-transition: all 0.3s ease;transition: all 0.3s ease;
 .main-page .breadcrumb {height:36px;line-height:36px;background-color: #eee;padding:2px;margin-bottom:10px;}
 .main-page .news-right {width:100%;height:320px;background:rgba(195,225,255,0.5)}
 
-.main-page .item-block {width:100%;height:320px;color:#333;background:rgba(205,235,255,0.05);margin-top:20px}
+.main-page .item-block {width:100%;min-height:320px;height:auto;color:#333;background:rgba(205,235,255,0.05);margin-top:20px}
 .main-page .item-spectial {width:100%;min-height:320px;color:#333;background:rgba(205,255,205,0.05);margin-top:20px}
 .main-page .item-spectial .links-a img {width:22%;margin-left:2%;margin-top:10px;opacity:1}
 .main-page .item-spectial .links-a img:hover {opacity:0.85}
@@ -45,6 +45,18 @@ a:hover {color:#f65;-webkit-transition: all 0.3s ease;transition: all 0.3s ease;
 
 .main-page .page-title {font-size:1.5em;margin:10px;}
 
+.index-journal-info {padding:5px;}
+.index-journal-info [class^="rank-"] {color:#fff;background:#666;padding:0 5px;border-radius:50%;margin-right:10px}
+.index-journal-info .rank-1 {background:#f00}
+.index-journal-info .rank-2 {background:#f80}
+.index-journal-info .rank-3 {background:#fc0}
+.index-journal-info a .type {margin:0 5px;color:#555;}
+
+.index-data-info {padding:5px;}
+.index-data-info a {margin:10px 0;}
+.index-data-info a img {width:32px;}
+.index-data-info a .name {margin:0 5px;}
+.index-data-info a .type {margin:0 5px;color:#555;}
 
 /***************/
 
